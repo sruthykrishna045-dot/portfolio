@@ -22,15 +22,20 @@
     <script type="text/babel">
       const { useState, useEffect } = React;
 
+      /**
+       * EDIT THE DATA BELOW TO UPDATE YOUR PORTFOLIO
+       * Click the "Code" tab at the top right to start editing.
+       */
       const PORTFOLIO_DATA = {
         personal: {
           name: "SRUTHY K",
-          role: "Software Quality Assurance",
+          role: "QA Engineer | Manual & Automation Tester",
           address: "Palakkad, Kerala, India",
           phone: "+91 8075268398",
           email: "sruthykrishna045@gmail.com",
           tagline: "Ensuring excellence through meticulous software testing.",
-          summary: "Motivated Software Tester with hands-on skills in manual testing, test case design and execution, defect tracking, and automation using Selenium. Clear understanding of SDLC and STLC with exposure to API and performance testing.",
+          summary: "Detail-oriented QA Engineer with hands-on experience in manual and automation testing. Skilled in test case design, defect tracking, SDLC/STLC, and tools like Selenium, JMeter, Postman, and Jira.",
+          resume: "resume.pdf",
           socials: {
             linkedin: "https://linkedin.com/in/sruthy-k2003/",
           }
@@ -60,11 +65,11 @@
           {
             title: "Automation & Tools",
             skills: [
-              { name: "Selenium WebDriver", level: 88 },
-              { name: "TestNG / JUnit / POM", level: 85 },
-              { name: "Postman (API Testing)", level: 85 },
-              { name: "Jira (Defect Tracking)", level: 90 },
-              { name: "JMeter (Performance)", level: 75 }
+              { name: "Selenium WebDriver", level: 75 },
+              { name: "TestNG / JUnit / POM", level: 72 },
+              { name: "Postman (API Testing)", level: 75 },
+              { name: "Jira (Defect Tracking)", level: 70 },
+              { name: "JMeter (Performance)", level: 80 }
             ]
           },
           {
@@ -81,14 +86,14 @@
           {
             id: 1,
             title: "OrangeHRM Manual Testing",
-            description: "Implemented end-to-end functional testing on OrangeHRM demo site, covering 60+ test cases across Login, PIM, and Leave modules. Identified defects and documented clear bug reports.",
+            description: "Designed and executed 60+ manual test cases for Login, PIM, and Leave modules. Identified defects, performed root cause analysis, and documented bugs with clear reproduction steps.",
             tags: ["Manual Testing", "RTM", "Defect Management", "STLC"],
             image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"
           },
           {
             id: 2,
             title: "ParaBank Web Automation",
-            description: "Automated banking workflows using Java and Selenium. Implemented dropdown handling, XPath locators, and validations for Registration, Fund Transfer, and Loan modules.",
+            description: "Automated end-to-end banking workflows using Java and Selenium WebDriver. Implemented XPath locators, validations, and Page Object Model for maintainable test scripts.",
             tags: ["Java", "Selenium", "XPath", "Automation"],
             image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
           }
@@ -104,14 +109,12 @@
 
       const App = () => {
         const [isDark, setIsDark] = useState(true);
-
         const toggleTheme = () => setIsDark(!isDark);
 
         return (
           <div className={`min-h-screen transition-colors duration-300 font-sans ${isDark ? 'bg-slate-950 text-white' : 'bg-white text-slate-900'}`}>
-            {/* Header */}
             <nav className={`fixed w-full z-50 p-4 backdrop-blur-md border-b flex justify-between items-center ${isDark ? 'border-white/10' : 'border-slate-200 shadow-sm'}`}>
-              <div className="font-bold text-xl tracking-tighter">
+              <div className="font-bold text-xl tracking-tighter uppercase">
                 {PORTFOLIO_DATA.personal.name}
               </div>
               <div className="flex items-center gap-6">
@@ -124,7 +127,6 @@
               </div>
             </nav>
 
-            {/* Hero Section */}
             <section id="about" className="pt-32 pb-20 px-4 text-center">
               <div className="max-w-4xl mx-auto">
                 <div className="flex flex-col items-center gap-2 mb-6">
@@ -151,11 +153,18 @@
                   <a href={PORTFOLIO_DATA.personal.socials.linkedin} target="_blank" className="border border-white/10 px-8 py-3 rounded-lg font-bold hover:bg-white/5 transition flex items-center gap-2">
                     <Icon name="linkedin" size={18} /> LinkedIn
                   </a>
+                  <a
+  href={PORTFOLIO_DATA.personal.resume}
+  target="_blank"
+  className="border border-blue-500/30 px-6 py-3 rounded-lg font-bold hover:bg-blue-500/10 transition flex items-center gap-2"
+>
+  <Icon name="file-text" size={18} /> View Resume
+</a>
+
                 </div>
               </div>
             </section>
 
-            {/* Education Section */}
             <section className={`py-20 px-4 ${isDark ? 'bg-slate-900/40' : 'bg-slate-50'}`}>
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl font-bold mb-12 text-center flex items-center justify-center gap-3">
@@ -173,7 +182,6 @@
               </div>
             </section>
 
-            {/* Skills */}
             <section id="skills" className="py-20 px-4">
               <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold mb-12 text-center">Technical & Professional Arsenal</h2>
@@ -200,7 +208,6 @@
               </div>
             </section>
 
-            {/* Projects */}
             <section id="projects" className={`py-20 px-4 ${isDark ? 'bg-slate-900/40' : 'bg-slate-50'}`}>
               <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
@@ -225,7 +232,6 @@
               </div>
             </section>
 
-            {/* Footer */}
             <footer className="py-20 px-4 border-t border-white/5 text-center">
               <div className="max-w-2xl mx-auto">
                 <h2 className="text-3xl font-bold mb-4">Let's Connect</h2>
