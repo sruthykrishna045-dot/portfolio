@@ -1,209 +1,249 @@
-const { useState, useEffect } = React;
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sruthy K | QA Portfolio</title>
+    <!-- CSS & Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      html { scroll-behavior: smooth; }
+      .animate-fade-in { animation: fadeIn 0.4s ease-out; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
 
-/**
- * DATA CONFIGURATION
- */
-const PORTFOLIO_DATA = {
-  personal: {
-    name: "Sruthy K",
-    role: "Software Tester",
-    tagline: "Elevating software quality, one test case at a time.",
-    bio: "Passionate about breaking software so your users don't have to. I specialize in uncovering hidden bugs, optimizing performance, and ensuring digital perfection.",
-    email: "sruthykrishna045@gmail.com",
-    socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com/in/sruthy-k2003/",
-    }
-  },
-  skills: [
-    { name: "Manual Testing", icon: "search", level: 95 },
-    { name: "Selenium Automation", icon: "bot", level: 85 },
-    { name: "API Testing (Postman)", icon: "plug", level: 80 },
-    { name: "Jira / Bug Tracking", icon: "bug", level: 90 },
-    { name: "SQL Database Testing", icon: "database", level: 80 },
-    { name: "Performance (JMeter)", icon: "gauge", level: 75 }
-  ],
-  projects: [
-    {
-      id: 1,
-      title: "OrangeHRM Manual Testing",
-      description: "A comprehensive testing project for the OrangeHRM web application focused on validating core HR modules such as Login, Employee Management (PIM), and Leave using manual testing.",
-      tags: ["Manual Testing", "Test Case Design", "Bug Tracking", "Jira"],
-      image: "https://images.unsplash.com/photo-1581092334709-efc9c2bb2c6c?auto=format&fit=crop&q=80&w=800"
-    },
-    {
-      id: 2,
-      title: "ParaBank Web Automation",
-      description: "Automated critical banking workflows using Selenium WebDriver with Java, focusing on reducing manual effort for repetitive scenarios.",
-      tags: ["Java", "Selenium", "TestNG", "Maven"],
-      image: "https://images.unsplash.com/photo-1574856342191-ee518e388c3a?auto=format&fit=crop&q=80&w=800"
-    },
-    {
-      id: 3,
-      title: "E-Commerce Regression Suite",
-      description: "Designed a maintainable Selenium framework to automate checkout and payment workflows, reducing regression cycle time significantly.",
-      tags: ["Selenium", "Automation", "E-commerce"],
-      image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80&w=800"
-    }
-  ]
-};
+    <script type="text/babel">
+      const { useState, useEffect } = React;
 
-// Reusable Icon Component for CDN version
-const Icon = ({ name, className = "", size = 20 }) => {
-  useEffect(() => {
-    if (window.lucide) window.lucide.createIcons();
-  }, [name]);
-  return <i data-lucide={name} className={className} style={{ width: size, height: size }}></i>;
-};
+      const PORTFOLIO_DATA = {
+        personal: {
+          name: "SRUTHY K",
+          role: "Software Quality Assurance",
+          address: "Palakkad, Kerala, India",
+          phone: "+91 8075268398",
+          email: "sruthykrishna045@gmail.com",
+          tagline: "Ensuring excellence through meticulous software testing.",
+          summary: "Motivated Software Tester with hands-on skills in manual testing, test case design and execution, defect tracking, and automation using Selenium. Clear understanding of SDLC and STLC with exposure to API and performance testing.",
+          socials: {
+            linkedin: "https://linkedin.com/in/sruthy-k2003/",
+          }
+        },
+        education: [
+          {
+            degree: "Advanced Diploma in AI Integrated Full Stack Software Testing",
+            school: "STC Technologies, Ernakulam",
+            period: "Aug 2025 - Dec 2025"
+          },
+          {
+            degree: "Bachelor of Computer Applications",
+            school: "School of Technology and Applied Sciences, Kottayam",
+            period: "2020 - 2023"
+          }
+        ],
+        skillCategories: [
+          {
+            title: "Manual Testing",
+            skills: [
+              { name: "SDLC & STLC", level: 95 },
+              { name: "Test Case Design / RTM", level: 92 },
+              { name: "Functional & Regression", level: 90 },
+              { name: "Defect Life Cycle", level: 95 }
+            ]
+          },
+          {
+            title: "Automation & Tools",
+            skills: [
+              { name: "Selenium WebDriver", level: 88 },
+              { name: "TestNG / JUnit / POM", level: 85 },
+              { name: "Postman (API Testing)", level: 85 },
+              { name: "Jira (Defect Tracking)", level: 90 },
+              { name: "JMeter (Performance)", level: 75 }
+            ]
+          },
+          {
+            title: "Professional Skills",
+            skills: [
+              { name: "Analytical Thinking", level: 90 },
+              { name: "Attention to Detail", level: 95 },
+              { name: "Communication", level: 85 },
+              { name: "Problem Solving", level: 88 }
+            ]
+          }
+        ],
+        projects: [
+          {
+            id: 1,
+            title: "OrangeHRM Manual Testing",
+            description: "Implemented end-to-end functional testing on OrangeHRM demo site, covering 60+ test cases across Login, PIM, and Leave modules. Identified defects and documented clear bug reports.",
+            tags: ["Manual Testing", "RTM", "Defect Management", "STLC"],
+            image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"
+          },
+          {
+            id: 2,
+            title: "ParaBank Web Automation",
+            description: "Automated banking workflows using Java and Selenium. Implemented dropdown handling, XPath locators, and validations for Registration, Fund Transfer, and Loan modules.",
+            tags: ["Java", "Selenium", "XPath", "Automation"],
+            image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
+          }
+        ]
+      };
 
-const App = () => {
-  const [isDark, setIsDark] = useState(true);
-  const [expandedProjectId, setExpandedProjectId] = useState(null);
-  const [enhancedDescription, setEnhancedDescription] = useState({});
-  const [loadingId, setLoadingId] = useState(null);
-  const [error, setError] = useState(null);
+      const Icon = ({ name, className = "", size = 20 }) => {
+        useEffect(() => {
+          if (window.lucide) window.lucide.createIcons();
+        }, [name]);
+        return <i data-lucide={name} className={className} style={{ width: size, height: size }}></i>;
+      };
 
-  const toggleTheme = () => setIsDark(!isDark);
+      const App = () => {
+        const [isDark, setIsDark] = useState(true);
 
-  const callGeminiAPI = async (userQuery) => {
-    const systemPrompt = "You are a professional QA resume writer. Rewrite the following project description into two high-impact, professional paragraphs focusing on technical skills and business impact. Do not use markdown bolding.";
-    const apiKey = ""; // Environment handles this
-    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+        const toggleTheme = () => setIsDark(!isDark);
 
-    const payload = {
-      contents: [{ parts: [{ text: userQuery }] }],
-      systemInstruction: { parts: [{ text: systemPrompt }] },
-    };
-
-    let attempts = 0;
-    while (attempts < 5) {
-      try {
-        const response = await fetch(apiUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        if (response.status === 429) {
-          await new Promise(r => setTimeout(r, Math.pow(2, attempts) * 1000));
-          attempts++;
-          continue;
-        }
-        const result = await response.json();
-        return result.candidates?.[0]?.content?.parts?.[0]?.text;
-      } catch (e) {
-        if (attempts === 4) throw e;
-        attempts++;
-      }
-    }
-  };
-
-  const handleEnhance = async (project) => {
-    if (enhancedDescription[project.id]) {
-      setExpandedProjectId(expandedProjectId === project.id ? null : project.id);
-      return;
-    }
-    setLoadingId(project.id);
-    setError(null);
-    setExpandedProjectId(project.id);
-    try {
-      const text = await callGeminiAPI(`Title: ${project.title}. Desc: ${project.description}`);
-      setEnhancedDescription(prev => ({ ...prev, [project.id]: text }));
-    } catch (e) {
-      setError("AI enhancement temporarily unavailable.");
-    } finally {
-      setLoadingId(null);
-    }
-  };
-
-  return (
-    <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-slate-950 text-white' : 'bg-white text-slate-900'}`}>
-      {/* Navigation */}
-      <nav className={`fixed w-full z-50 p-4 backdrop-blur-md border-b flex justify-between items-center ${isDark ? 'border-slate-800' : 'border-gray-200'}`}>
-        <div className="font-bold text-2xl bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-          {PORTFOLIO_DATA.personal.name.split(' ')[0]}.
-        </div>
-        <button onClick={toggleTheme} className={`p-2 rounded-full ${isDark ? 'text-yellow-400 hover:bg-slate-800' : 'text-slate-700 hover:bg-gray-100'}`}>
-          <Icon name={isDark ? "sun" : "moon"} />
-        </button>
-      </nav>
-
-      {/* Hero */}
-      <section className="pt-40 pb-20 px-4 text-center relative overflow-hidden">
-        <div className="max-w-4xl mx-auto relative z-10">
-          <h2 className="text-blue-500 font-bold tracking-widest uppercase mb-4">{PORTFOLIO_DATA.personal.role}</h2>
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
-            Hello, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">{PORTFOLIO_DATA.personal.name}</span>
-          </h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">{PORTFOLIO_DATA.personal.tagline}</p>
-          <div className="flex justify-center gap-4">
-            <a href={`mailto:${PORTFOLIO_DATA.personal.email}`} className="bg-blue-600 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-700 transition transform hover:scale-105 shadow-lg shadow-blue-500/20">Hire Me</a>
-            <a href="#projects" className="border border-gray-700 px-8 py-4 rounded-full font-bold hover:bg-gray-800 transition">View Work</a>
-          </div>
-        </div>
-      </section>
-
-      {/* Skills Grid */}
-      <section className={`py-20 px-4 ${isDark ? 'bg-slate-900/50' : 'bg-gray-50'}`}>
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center">Technical Expertise</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PORTFOLIO_DATA.skills.map((skill, i) => (
-              <div key={i} className={`p-6 rounded-2xl border ${isDark ? 'bg-slate-800 border-slate-700' : 'bg-white border-gray-200 shadow-sm'}`}>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-blue-500/10 text-blue-500 rounded-lg"><Icon name={skill.icon} /></div>
-                  <span className="font-bold">{skill.name}</span>
-                </div>
-                <div className="w-full bg-gray-700 rounded-full h-1.5 overflow-hidden">
-                  <div className="bg-blue-600 h-full rounded-full transition-all duration-1000" style={{ width: `${skill.level}%` }}></div>
-                </div>
+        return (
+          <div className={`min-h-screen transition-colors duration-300 font-sans ${isDark ? 'bg-slate-950 text-white' : 'bg-white text-slate-900'}`}>
+            {/* Header */}
+            <nav className={`fixed w-full z-50 p-4 backdrop-blur-md border-b flex justify-between items-center ${isDark ? 'border-white/10' : 'border-slate-200 shadow-sm'}`}>
+              <div className="font-bold text-xl tracking-tighter">
+                {PORTFOLIO_DATA.personal.name}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              <div className="flex items-center gap-6">
+                <a href="#about" className="text-sm font-medium hover:text-blue-500 hidden md:block">About</a>
+                <a href="#skills" className="text-sm font-medium hover:text-blue-500 hidden md:block">Skills</a>
+                <a href="#projects" className="text-sm font-medium hover:text-blue-500 hidden md:block">Projects</a>
+                <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-white/10">
+                  <Icon name={isDark ? "sun" : "moon"} />
+                </button>
+              </div>
+            </nav>
 
-      {/* Projects */}
-      <section id="projects" className="py-20 px-4 max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-center">Featured Work</h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {PORTFOLIO_DATA.projects.map(project => (
-            <div key={project.id} className={`rounded-2xl border overflow-hidden transition-all hover:shadow-2xl ${isDark ? 'bg-slate-900 border-slate-800' : 'bg-white border-gray-100 shadow-xl'}`}>
-              <img src={project.image} className="w-full h-56 object-cover opacity-80" />
-              <div className="p-8">
-                <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                <p className={`mb-6 leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="text-[10px] uppercase font-bold tracking-wider bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full border border-blue-500/20">{tag}</span>
-                  ))}
+            {/* Hero Section */}
+            <section id="about" className="pt-32 pb-20 px-4 text-center">
+              <div className="max-w-4xl mx-auto">
+                <div className="flex flex-col items-center gap-2 mb-6">
+                   <div className="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-500 font-semibold text-xs uppercase tracking-widest border border-blue-500/20">
+                    {PORTFOLIO_DATA.personal.role}
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-500">
+                    <Icon name="map-pin" size={14} />
+                    {PORTFOLIO_DATA.personal.address}
+                  </div>
                 </div>
                 
-                <button 
-                  onClick={() => handleEnhance(project)}
-                  className={`w-full py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all ${
-                    loadingId === project.id ? 'bg-slate-700 cursor-wait' : 'bg-yellow-500 text-slate-900 hover:bg-yellow-400'
-                  }`}
-                >
-                  {loadingId === project.id ? 'Analyzing...' : (enhancedDescription[project.id] ? 'Toggle AI Summary' : 'Enhance with AI ✨')}
-                </button>
-
-                {expandedProjectId === project.id && enhancedDescription[project.id] && (
-                  <div className={`mt-4 p-4 rounded-xl border animate-fade-in ${isDark ? 'bg-blue-950/30 border-blue-500/30' : 'bg-blue-50 border-blue-200'}`}>
-                    <p className="text-sm leading-relaxed whitespace-pre-wrap">{enhancedDescription[project.id]}</p>
-                  </div>
-                )}
+                <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+                  Hi, I'm <span className="text-blue-500">{PORTFOLIO_DATA.personal.name}</span>
+                </h1>
+                <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                  {PORTFOLIO_DATA.personal.summary}
+                </p>
+                
+                <div className="flex flex-wrap justify-center gap-4">
+                  <a href={`mailto:${PORTFOLIO_DATA.personal.email}`} className="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-500/20 flex items-center gap-2">
+                    <Icon name="mail" size={18} /> Contact Me
+                  </a>
+                  <a href={PORTFOLIO_DATA.personal.socials.linkedin} target="_blank" className="border border-white/10 px-8 py-3 rounded-lg font-bold hover:bg-white/5 transition flex items-center gap-2">
+                    <Icon name="linkedin" size={18} /> LinkedIn
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            </section>
 
-      <footer className="py-20 text-center border-t border-slate-800 opacity-50">
-        <p>© {new Date().getFullYear()} {PORTFOLIO_DATA.personal.name}. Software Tester Portfolio.</p>
-      </footer>
-    </div>
-  );
-};
+            {/* Education Section */}
+            <section className={`py-20 px-4 ${isDark ? 'bg-slate-900/40' : 'bg-slate-50'}`}>
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-3xl font-bold mb-12 text-center flex items-center justify-center gap-3">
+                  <Icon name="graduation-cap" className="text-blue-500" size={32} /> Education & Certifications
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {PORTFOLIO_DATA.education.map((edu, i) => (
+                    <div key={i} className={`p-6 rounded-2xl border ${isDark ? 'bg-slate-800/50 border-white/5' : 'bg-white border-slate-200 shadow-sm'}`}>
+                      <h3 className="font-bold text-base leading-tight">{edu.degree}</h3>
+                      <p className="text-sm text-gray-400 mt-2">{edu.school}</p>
+                      <p className="text-xs text-blue-500 font-bold mt-4 uppercase tracking-wider">{edu.period}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+            {/* Skills */}
+            <section id="skills" className="py-20 px-4">
+              <div className="max-w-7xl mx-auto">
+                <h2 className="text-3xl font-bold mb-12 text-center">Technical & Professional Arsenal</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {PORTFOLIO_DATA.skillCategories.map((category, idx) => (
+                    <div key={idx} className={`p-8 rounded-3xl border ${isDark ? 'bg-slate-900/50 border-white/5' : 'bg-white border-slate-200 shadow-sm'}`}>
+                      <h3 className="text-xl font-bold mb-6 text-blue-500 border-b border-blue-500/20 pb-2">{category.title}</h3>
+                      <div className="space-y-6">
+                        {category.skills.map((skill, i) => (
+                          <div key={i}>
+                            <div className="flex justify-between mb-2">
+                              <span className="text-sm font-medium">{skill.name}</span>
+                              <span className="text-xs text-gray-500">{skill.level}%</span>
+                            </div>
+                            <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+                              <div className="h-full bg-blue-500 rounded-full" style={{ width: `${skill.level}%` }}></div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Projects */}
+            <section id="projects" className={`py-20 px-4 ${isDark ? 'bg-slate-900/40' : 'bg-slate-50'}`}>
+              <div className="max-w-7xl mx-auto">
+                <h2 className="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {PORTFOLIO_DATA.projects.map(project => (
+                    <div key={project.id} className={`rounded-3xl border overflow-hidden group ${isDark ? 'bg-slate-950 border-white/5' : 'bg-white border-slate-200'}`}>
+                      <div className="h-48 overflow-hidden bg-slate-800">
+                        <img src={project.image} className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70" />
+                      </div>
+                      <div className="p-8">
+                        <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+                        <p className="text-gray-400 text-sm leading-relaxed mb-6">{project.description}</p>
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags.map(tag => (
+                            <span key={tag} className="px-3 py-1 bg-blue-500/5 border border-blue-500/20 text-blue-400 rounded-full text-[10px] uppercase font-bold tracking-wider">{tag}</span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Footer */}
+            <footer className="py-20 px-4 border-t border-white/5 text-center">
+              <div className="max-w-2xl mx-auto">
+                <h2 className="text-3xl font-bold mb-4">Let's Connect</h2>
+                <p className="text-gray-400 mb-2">{PORTFOLIO_DATA.personal.address}</p>
+                <p className="text-gray-400 mb-8">{PORTFOLIO_DATA.personal.phone}</p>
+                <div className="flex justify-center gap-6">
+                  <a href={`mailto:${PORTFOLIO_DATA.personal.email}`} className="p-4 rounded-full bg-white/5 hover:text-blue-500 transition shadow-sm"><Icon name="mail" /></a>
+                  <a href={PORTFOLIO_DATA.personal.socials.linkedin} target="_blank" className="p-4 rounded-full bg-white/5 hover:text-blue-500 transition shadow-sm"><Icon name="linkedin" /></a>
+                </div>
+                <p className="mt-12 text-xs text-gray-600 uppercase tracking-widest font-bold">© 2026 {PORTFOLIO_DATA.personal.name}</p>
+              </div>
+            </footer>
+          </div>
+        );
+      };
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
