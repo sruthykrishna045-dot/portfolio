@@ -1,263 +1,668 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sruthy K | QA Portfolio</title>
-    <!-- CSS & Frameworks -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-      html { scroll-behavior: smooth; }
-      .animate-fade-in { animation: fadeIn 0.4s ease-out; }
-      @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-    </style>
-  </head>
-  <body>
-    <div id="root"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sruthy K | QA Engineer Portfolio</title>
+  <meta name="description" content="Sruthy K — QA Fresher skilled in Manual Testing, Selenium WebDriver, JMeter, Postman and JIRA. Seeking junior QA Analyst or SDET roles." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <script type="text/babel">
-      const { useState, useEffect } = React;
+    :root {
+      --blue:       #1A5FB4;
+      --blue-light: #3584E4;
+      --blue-pale:  #EEF4FB;
+      --blue-dark:  #0D3B76;
+      --text:       #1C1C1E;
+      --muted:      #6B7280;
+      --border:     #E5E7EB;
+      --bg:         #FFFFFF;
+      --bg2:        #F8FAFC;
+      --radius:     10px;
+      --shadow:     0 1px 3px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.06);
+    }
 
-      /**
-       * EDIT THE DATA BELOW TO UPDATE YOUR PORTFOLIO
-       * Click the "Code" tab at the top right to start editing.
-       */
-      const PORTFOLIO_DATA = {
-        personal: {
-          name: "SRUTHY K",
-          role: "QA Engineer | Manual & Automation Tester",
-          address: "Palakkad, Kerala, India",
-          phone: "+91 8075268398",
-          email: "sruthykrishna045@gmail.com",
-          tagline: "Ensuring excellence through meticulous software testing.",
-          summary: "Detail-oriented QA Engineer with hands-on experience in manual and automation testing. Skilled in test case design, defect tracking, SDLC/STLC, and tools like Selenium, JMeter, Postman, and Jira.",
-          resume: "resume.pdf",
-          socials: {
-            linkedin: "https://linkedin.com/in/sruthy-k2003/",
-          }
-        },
-        education: [
-          {
-            degree: "Advanced Diploma in AI Integrated Full Stack Software Testing",
-            school: "STC Technologies, Ernakulam",
-            period: "Aug 2025 - Dec 2025"
-          },
-          {
-            degree: "Bachelor of Computer Applications",
-            school: "School of Technology and Applied Sciences, Kottayam",
-            period: "2020 - 2023"
-          }
-        ],
-        skillCategories: [
-          {
-            title: "Manual Testing",
-            skills: [
-              { name: "SDLC & STLC", level: 95 },
-              { name: "Test Case Design / RTM", level: 92 },
-              { name: "Functional & Regression", level: 90 },
-              { name: "Defect Life Cycle", level: 95 }
-            ]
-          },
-          {
-            title: "Automation & Tools",
-            skills: [
-              { name: "Selenium WebDriver", level: 75 },
-              { name: "TestNG / JUnit / POM", level: 72 },
-              { name: "Postman (API Testing)", level: 75 },
-              { name: "Jira (Defect Tracking)", level: 70 },
-              { name: "JMeter (Performance)", level: 80 }
-            ]
-          },
-          {
-            title: "Professional Skills",
-            skills: [
-              { name: "Analytical Thinking", level: 90 },
-              { name: "Attention to Detail", level: 95 },
-              { name: "Communication", level: 85 },
-              { name: "Problem Solving", level: 88 }
-            ]
-          }
-        ],
-        projects: [
-          {
-            id: 1,
-            title: "OrangeHRM Manual Testing",
-            description: "Designed and executed 60+ manual test cases for Login, PIM, and Leave modules. Identified defects, performed root cause analysis, and documented bugs with clear reproduction steps.",
-            tags: ["Manual Testing", "RTM", "Defect Management", "STLC"],
-            image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"
-          },
-          {
-            id: 2,
-            title: "ParaBank Web Automation",
-            description: "Automated end-to-end banking workflows using Java and Selenium WebDriver. Implemented XPath locators, validations, and Page Object Model for maintainable test scripts.",
-            tags: ["Java", "Selenium", "XPath", "Automation"],
-            image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
-          },
-          {
-  id: 3,
-  title: "Performance Testing using Apache JMeter",
-  description: "Designed and executed a basic performance testing scenario using Apache JMeter to evaluate response time and throughput of a web application. Configured Thread Groups, Samplers, Timers, and Listeners to simulate multiple users and analyze performance metrics.",
-  tags: ["JMeter", "Performance Testing", "Thread Group", "Listeners"],
-  image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
 
-}
-        ]
-      };
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 60px;
+    }
+    .nav-logo { font-weight: 700; font-size: 1.1rem; color: var(--blue); letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: 0.875rem; color: var(--muted); font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-resume {
+      background: var(--blue); color: #fff; padding: 7px 18px;
+      border-radius: 6px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; transition: background .2s;
+    }
+    .nav-resume:hover { background: var(--blue-dark); color: #fff; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; font-size: 1.3rem; color: var(--text); }
+    .mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--border); padding: 1rem 5%; z-index: 99; flex-direction: column; gap: 1rem; }
+    .mobile-menu a { text-decoration: none; color: var(--text); font-weight: 500; padding: 0.4rem 0; }
+    .mobile-menu.open { display: flex; }
 
-      const Icon = ({ name, className = "", size = 20 }) => {
-        useEffect(() => {
-          if (window.lucide) window.lucide.createIcons();
-        }, [name]);
-        return <i data-lucide={name} className={className} style={{ width: size, height: size }}></i>;
-      };
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 80px 5% 60px;
+      background: linear-gradient(135deg, #F0F6FF 0%, #FFFFFF 60%);
+    }
+    .hero-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 4rem; width: 100%; }
+    .hero-text { flex: 1; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--blue-pale); color: var(--blue);
+      font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+      border-radius: 20px; margin-bottom: 1.25rem; letter-spacing: 0.02em;
+    }
+    .hero-badge i { font-size: 0.75rem; }
+    .hero-text h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
+    .hero-text h1 span { color: var(--blue); }
+    .hero-title { font-size: 1.15rem; color: var(--muted); font-weight: 400; margin-bottom: 1.25rem; }
+    .hero-desc { font-size: 1rem; color: #4B5563; line-height: 1.75; max-width: 520px; margin-bottom: 2rem; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--blue); color: #fff; padding: 12px 28px;
+      border-radius: var(--radius); font-weight: 600; font-size: 0.9rem;
+      text-decoration: none; transition: background .2s, transform .15s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .btn-outline {
+      border: 1.5px solid var(--blue); color: var(--blue); padding: 11px 28px;
+      border-radius: var(--radius); font-weight: 600; font-size: 0.9rem;
+      text-decoration: none; transition: all .2s; background: transparent;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-outline:hover { background: var(--blue-pale); }
+    .hero-image { flex-shrink: 0; }
+    .avatar-ring {
+      width: 260px; height: 260px; border-radius: 50%;
+      border: 4px solid var(--blue-pale);
+      box-shadow: 0 0 0 8px #dbeafe44;
+      overflow: hidden; background: var(--blue-pale);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .avatar-ring img { width: 100%; height: 100%; object-fit: cover; }
+    .avatar-initials { font-size: 5rem; font-weight: 700; color: var(--blue); }
+    .hero-stats { display: flex; gap: 2rem; margin-top: 2rem; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 1.6rem; font-weight: 700; color: var(--blue); line-height: 1; }
+    .stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
 
-      const App = () => {
-        const [isDark, setIsDark] = useState(true);
-        const toggleTheme = () => setIsDark(!isDark);
+    /* ── SECTION SHARED ── */
+    section { padding: 80px 5%; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 0.78rem; font-weight: 600; color: var(--blue); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+    .section-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.6rem; }
+    .section-sub { color: var(--muted); font-size: 0.95rem; margin-bottom: 3rem; max-width: 540px; }
+    .divider { width: 48px; height: 3px; background: var(--blue); border-radius: 2px; margin-bottom: 1rem; }
 
-        return (
-          <div className={`min-h-screen transition-colors duration-300 font-sans ${isDark ? 'bg-slate-950 text-white' : 'bg-white text-slate-900'}`}>
-            <nav className={`fixed w-full z-50 p-4 backdrop-blur-md border-b flex justify-between items-center ${isDark ? 'border-white/10' : 'border-slate-200 shadow-sm'}`}>
-              <div className="font-bold text-xl tracking-tighter uppercase">
-                {PORTFOLIO_DATA.personal.name}
-              </div>
-              <div className="flex items-center gap-6">
-                <a href="#about" className="text-sm font-medium hover:text-blue-500 hidden md:block">About</a>
-                <a href="#skills" className="text-sm font-medium hover:text-blue-500 hidden md:block">Skills</a>
-                <a href="#projects" className="text-sm font-medium hover:text-blue-500 hidden md:block">Projects</a>
-                <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-white/10">
-                  <Icon name={isDark ? "sun" : "moon"} />
-                </button>
-              </div>
-            </nav>
+    /* ── ABOUT ── */
+    #about { background: var(--bg2); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .about-text p { color: #4B5563; line-height: 1.8; margin-bottom: 1rem; font-size: 0.97rem; }
+    .about-info { display: flex; flex-direction: column; gap: 1rem; }
+    .info-item { display: flex; align-items: center; gap: 12px; }
+    .info-item i { color: var(--blue); width: 18px; font-size: 0.95rem; }
+    .info-item span { font-size: 0.9rem; color: var(--text); }
+    .info-item a { color: var(--blue); text-decoration: none; }
+    .info-item a:hover { text-decoration: underline; }
 
-            <section id="about" className="pt-32 pb-20 px-4 text-center">
-              <div className="max-w-4xl mx-auto">
-                <div className="flex flex-col items-center gap-2 mb-6">
-                   <div className="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-500 font-semibold text-xs uppercase tracking-widest border border-blue-500/20">
-                    {PORTFOLIO_DATA.personal.role}
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-500">
-                    <Icon name="map-pin" size={14} />
-                    {PORTFOLIO_DATA.personal.address}
-                  </div>
-                </div>
-                
-                <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-                  Hi, I'm <span className="text-blue-500">{PORTFOLIO_DATA.personal.name}</span>
-                </h1>
-                <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                  {PORTFOLIO_DATA.personal.summary}
-                </p>
-                
-                <div className="flex flex-wrap justify-center gap-4">
-                  <a href={`mailto:${PORTFOLIO_DATA.personal.email}`} className="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-500/20 flex items-center gap-2">
-                    <Icon name="mail" size={18} /> Contact Me
-                  </a>
-                  <a href={PORTFOLIO_DATA.personal.socials.linkedin} target="_blank" className="border border-white/10 px-8 py-3 rounded-lg font-bold hover:bg-white/5 transition flex items-center gap-2">
-                    <Icon name="linkedin" size={18} /> LinkedIn
-                  </a>
-                  <a
-  href={PORTFOLIO_DATA.personal.resume}
-  target="_blank"
-  className="border border-blue-500/30 px-6 py-3 rounded-lg font-bold hover:bg-blue-500/10 transition flex items-center gap-2"
->
-  <Icon name="file-text" size={18} /> View Resume
-</a>
+    /* ── SKILLS ── */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .skill-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .skill-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+    .skill-card-icon { width: 40px; height: 40px; border-radius: 8px; background: var(--blue-pale); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+    .skill-card-icon i { color: var(--blue); font-size: 1.1rem; }
+    .skill-card h4 { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text); }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      background: var(--blue-pale); color: var(--blue);
+      font-size: 0.75rem; font-weight: 500; padding: 4px 10px;
+      border-radius: 20px;
+    }
 
-                </div>
-              </div>
-            </section>
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--bg2); }
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before { content: ''; position: absolute; left: 7px; top: 6px; bottom: 0; width: 2px; background: var(--blue-pale); }
+    .timeline-item { position: relative; margin-bottom: 2.5rem; }
+    .timeline-dot {
+      position: absolute; left: -2rem; top: 6px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--blue); border: 3px solid var(--blue-pale);
+    }
+    .timeline-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+    .tl-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+    .tl-role { font-size: 1rem; font-weight: 600; }
+    .tl-company { color: var(--blue); font-weight: 500; font-size: 0.9rem; }
+    .tl-date { font-size: 0.8rem; color: var(--muted); background: var(--blue-pale); padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+    .tl-bullets { margin-top: 0.75rem; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 0.4rem; }
+    .tl-bullets li { font-size: 0.9rem; color: #4B5563; line-height: 1.6; }
 
-            <section className={`py-20 px-4 ${isDark ? 'bg-slate-900/40' : 'bg-slate-50'}`}>
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold mb-12 text-center flex items-center justify-center gap-3">
-                  <Icon name="graduation-cap" className="text-blue-500" size={32} /> Education & Certifications
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {PORTFOLIO_DATA.education.map((edu, i) => (
-                    <div key={i} className={`p-6 rounded-2xl border ${isDark ? 'bg-slate-800/50 border-white/5' : 'bg-white border-slate-200 shadow-sm'}`}>
-                      <h3 className="font-bold text-base leading-tight">{edu.degree}</h3>
-                      <p className="text-sm text-gray-400 mt-2">{edu.school}</p>
-                      <p className="text-xs text-blue-500 font-bold mt-4 uppercase tracking-wider">{edu.period}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
+    /* ── PROJECTS ── */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .project-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.75rem;
+      display: flex; flex-direction: column;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .project-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+    .project-type { font-size: 0.72rem; font-weight: 600; color: var(--blue); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.5rem; }
+    .project-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .project-card p { font-size: 0.9rem; color: #4B5563; line-height: 1.7; flex: 1; margin-bottom: 1rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+    .project-tag { background: var(--blue-pale); color: var(--blue); font-size: 0.73rem; font-weight: 500; padding: 3px 10px; border-radius: 20px; }
+    .project-links { display: flex; gap: 0.75rem; margin-top: auto; }
+    .project-link {
+      font-size: 0.82rem; font-weight: 600; color: var(--blue);
+      text-decoration: none; display: flex; align-items: center; gap: 5px;
+      padding: 6px 14px; border: 1.5px solid var(--blue);
+      border-radius: 6px; transition: all .2s;
+    }
+    .project-link:hover { background: var(--blue); color: #fff; }
+    .project-link.disabled { opacity: 0.45; pointer-events: none; }
 
-            <section id="skills" className="py-20 px-4">
-              <div className="max-w-7xl mx-auto">
-                <h2 className="text-3xl font-bold mb-12 text-center">Technical & Professional Arsenal</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {PORTFOLIO_DATA.skillCategories.map((category, idx) => (
-                    <div key={idx} className={`p-8 rounded-3xl border ${isDark ? 'bg-slate-900/50 border-white/5' : 'bg-white border-slate-200 shadow-sm'}`}>
-                      <h3 className="text-xl font-bold mb-6 text-blue-500 border-b border-blue-500/20 pb-2">{category.title}</h3>
-                      <div className="space-y-6">
-                        {category.skills.map((skill, i) => (
-                          <div key={i}>
-                            <div className="flex justify-between mb-2">
-                              <span className="text-sm font-medium">{skill.name}</span>
-                              <span className="text-xs text-gray-500">{skill.level}%</span>
-                            </div>
-                            <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
-                              <div className="h-full bg-blue-500 rounded-full" style={{ width: `${skill.level}%` }}></div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
+    /* ── EDUCATION ── */
+    #education { background: var(--bg2); }
+    .edu-grid { display: flex; flex-direction: column; gap: 1.25rem; }
+    .edu-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .edu-icon { width: 44px; height: 44px; border-radius: 8px; background: var(--blue-pale); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .edu-icon i { color: var(--blue); font-size: 1.1rem; }
+    .edu-body { flex: 1; }
+    .edu-degree { font-size: 1rem; font-weight: 600; }
+    .edu-school { font-size: 0.875rem; color: var(--muted); margin-top: 2px; }
+    .edu-date { font-size: 0.8rem; color: var(--muted); background: var(--blue-pale); padding: 3px 10px; border-radius: 20px; white-space: nowrap; margin-left: auto; }
 
-            <section id="projects" className={`py-20 px-4 ${isDark ? 'bg-slate-900/40' : 'bg-slate-50'}`}>
-              <div className="max-w-7xl mx-auto">
-                <h2 className="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {PORTFOLIO_DATA.projects.map(project => (
-                    <div key={project.id} className={`rounded-3xl border overflow-hidden group ${isDark ? 'bg-slate-950 border-white/5' : 'bg-white border-slate-200'}`}>
-                      <div className="h-48 overflow-hidden bg-slate-800">
-                        <img src={project.image} className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70" />
-                      </div>
-                      <div className="p-8">
-                        <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-6">{project.description}</p>
-                        <div className="flex flex-wrap gap-2">
-                          {project.tags.map(tag => (
-                            <span key={tag} className="px-3 py-1 bg-blue-500/5 border border-blue-500/20 text-blue-400 rounded-full text-[10px] uppercase font-bold tracking-wider">{tag}</span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
+    /* ── CERTIFICATIONS ── */
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .cert-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem 1.5rem;
+      display: flex; align-items: center; gap: 1rem;
+      transition: box-shadow .2s;
+    }
+    .cert-card:hover { box-shadow: var(--shadow); }
+    .cert-icon { width: 42px; height: 42px; border-radius: 8px; background: var(--blue-pale); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cert-icon i { color: var(--blue); font-size: 1.1rem; }
+    .cert-name { font-size: 0.9rem; font-weight: 600; }
+    .cert-issuer { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
 
-            <footer className="py-20 px-4 border-t border-white/5 text-center">
-              <div className="max-w-2xl mx-auto">
-                <h2 className="text-3xl font-bold mb-4">Let's Connect</h2>
-                <p className="text-gray-400 mb-2">{PORTFOLIO_DATA.personal.address}</p>
-                <p className="text-gray-400 mb-8">{PORTFOLIO_DATA.personal.phone}</p>
-                <div className="flex justify-center gap-6">
-                  <a href={`mailto:${PORTFOLIO_DATA.personal.email}`} className="p-4 rounded-full bg-white/5 hover:text-blue-500 transition shadow-sm"><Icon name="mail" /></a>
-                  <a href={PORTFOLIO_DATA.personal.socials.linkedin} target="_blank" className="p-4 rounded-full bg-white/5 hover:text-blue-500 transition shadow-sm"><Icon name="linkedin" /></a>
-                </div>
-                <p className="mt-12 text-xs text-gray-600 uppercase tracking-widest font-bold">© 2026 {PORTFOLIO_DATA.personal.name}</p>
-              </div>
-            </footer>
+    /* ── CONTACT ── */
+    #contact { background: var(--bg); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 1.25rem; }
+    .contact-item { display: flex; align-items: center; gap: 14px; }
+    .contact-item-icon { width: 44px; height: 44px; border-radius: 8px; background: var(--blue-pale); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-item-icon i { color: var(--blue); }
+    .contact-item-label { font-size: 0.75rem; color: var(--muted); font-weight: 500; }
+    .contact-item-value { font-size: 0.9rem; font-weight: 500; }
+    .contact-item-value a { color: var(--text); text-decoration: none; }
+    .contact-item-value a:hover { color: var(--blue); }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    .form-group label { font-size: 0.82rem; font-weight: 500; color: var(--text); }
+    .form-group input, .form-group textarea {
+      padding: 10px 14px; border: 1.5px solid var(--border);
+      border-radius: 8px; font-size: 0.9rem; font-family: inherit;
+      color: var(--text); background: var(--bg);
+      transition: border-color .2s; outline: none;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--blue); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-submit {
+      background: var(--blue); color: #fff; border: none;
+      padding: 12px 28px; border-radius: 8px; font-size: 0.9rem;
+      font-weight: 600; cursor: pointer; transition: background .2s;
+      display: inline-flex; align-items: center; gap: 8px; width: fit-content;
+    }
+    .form-submit:hover { background: var(--blue-dark); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text); color: #9CA3AF;
+      text-align: center; padding: 2rem 5%;
+      font-size: 0.85rem;
+    }
+    footer a { color: #9CA3AF; text-decoration: none; }
+    footer a:hover { color: #fff; }
+    .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.75rem; }
+
+    /* ── SCROLL TO TOP ── */
+    #scrollTop {
+      position: fixed; bottom: 28px; right: 28px;
+      background: var(--blue); color: #fff; border: none;
+      width: 42px; height: 42px; border-radius: 50%;
+      font-size: 1rem; cursor: pointer; display: none;
+      align-items: center; justify-content: center;
+      box-shadow: 0 4px 12px rgba(26,95,180,0.35);
+      z-index: 99; transition: background .2s;
+    }
+    #scrollTop:hover { background: var(--blue-dark); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links, .nav-resume { display: none; }
+      .hamburger { display: block; }
+      .hero-inner { flex-direction: column-reverse; text-align: center; gap: 2rem; }
+      .hero-desc { margin-left: auto; margin-right: auto; }
+      .hero-btns { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .avatar-ring { width: 180px; height: 180px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .tl-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">Sruthy K</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-resume" href="https://github.com/sruthykrishna045-dot/portfolio/raw/main/Sruthy_K_SoftwareTester_Resume.pdf" target="_blank">
+    <i class="fa fa-download"></i> Resume
+  </a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <i class="fa fa-bars"></i>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#skills" onclick="closeMenu()">Skills</a>
+  <a href="#experience" onclick="closeMenu()">Experience</a>
+  <a href="#projects" onclick="closeMenu()">Projects</a>
+  <a href="#education" onclick="closeMenu()">Education</a>
+  <a href="#certifications" onclick="closeMenu()">Certifications</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="https://github.com/sruthykrishna045-dot/portfolio/raw/main/Sruthy_K_SoftwareTester_Resume.pdf" target="_blank">Download Resume</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge"><i class="fa fa-circle-check"></i> Open to work — QA Analyst / SDET roles</div>
+      <h1>Hi, I'm <span>Sruthy K</span></h1>
+      <p class="hero-title">Software QA Engineer · Manual & Automation Testing</p>
+      <p class="hero-desc">
+        Results-driven QA fresher with hands-on experience executing 150+ test cases, automating end-to-end workflows using Selenium WebDriver (Java), and tracking defects in JIRA. Proficient in the full STLC with practical exposure to Postman, JMeter, and SQL.
+      </p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="#projects"><i class="fa fa-folder-open"></i> View Projects</a>
+        <a class="btn-outline" href="#contact"><i class="fa fa-envelope"></i> Contact Me</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">150+</div><div class="stat-label">Test Cases</div></div>
+        <div class="stat"><div class="stat-num">2</div><div class="stat-label">Projects</div></div>
+        <div class="stat"><div class="stat-num">6+</div><div class="stat-label">Tools</div></div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="avatar-ring">
+        <!-- Replace src with your photo path once uploaded, e.g. src="photo.jpg" -->
+        <!-- <img src="photo.jpg" alt="Sruthy K" /> -->
+        <span class="avatar-initials">SK</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label">About Me</p>
+    <div class="divider"></div>
+    <h2 class="section-title">Who I am</h2>
+    <p class="section-sub">A detail-oriented QA fresher from Kerala, passionate about software quality.</p>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I'm a Software Testing professional with a BCA background and a completed AI Integrated Full Stack Software Testing certification. I have hands-on training in Manual Testing, Selenium automation with Java, API testing using Postman, and Performance Testing with Apache JMeter.
+        </p>
+        <p>
+          During my training at Ubicsoft IT Solutions, I executed 150+ test cases across functional and regression cycles, worked through end-to-end STLC activities, and automated real-world banking workflows using Selenium WebDriver with Page Object Model.
+        </p>
+        <p>
+          I'm actively seeking a junior QA Analyst or SDET role where I can contribute immediately, grow my automation skills, and be part of a quality-driven team.
+        </p>
+      </div>
+      <div class="about-info">
+        <div class="info-item"><i class="fa fa-location-dot"></i><span>Palakkad, Kerala, India</span></div>
+        <div class="info-item"><i class="fa fa-envelope"></i><span><a href="mailto:sruthykrishna045@gmail.com">sruthykrishna045@gmail.com</a></span></div>
+        <div class="info-item"><i class="fa fa-phone"></i><span>+91 8075268398</span></div>
+        <div class="info-item"><i class="fab fa-linkedin"></i><span><a href="https://linkedin.com/in/sruthy-k2003" target="_blank">linkedin.com/in/sruthy-k2003</a></span></div>
+        <div class="info-item"><i class="fab fa-github"></i><span><a href="https://github.com/sruthykrishna045-dot" target="_blank">github.com/sruthykrishna045-dot</a></span></div>
+        <div class="info-item"><i class="fa fa-graduation-cap"></i><span>BCA — School of Technology & Applied Sciences, Kottayam</span></div>
+        <div class="info-item"><i class="fa fa-briefcase"></i><span>Open to full-time QA / SDET roles</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="background: var(--bg2);">
+  <div class="section-inner">
+    <p class="section-label">Technical Skills</p>
+    <div class="divider"></div>
+    <h2 class="section-title">What I work with</h2>
+    <p class="section-sub">Tools and technologies I've used across manual testing, automation, and API testing.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-icon"><i class="fa fa-list-check"></i></div>
+        <h4>Manual Testing</h4>
+        <div class="tag-list">
+          <span class="tag">SDLC</span><span class="tag">STLC</span><span class="tag">Defect Life Cycle</span>
+          <span class="tag">Test Case Design</span><span class="tag">Functional Testing</span>
+          <span class="tag">Regression Testing</span><span class="tag">System Testing</span><span class="tag">RTM</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon"><i class="fa fa-robot"></i></div>
+        <h4>Automation Testing</h4>
+        <div class="tag-list">
+          <span class="tag">Selenium WebDriver 4.x</span><span class="tag">Java</span>
+          <span class="tag">TestNG 7</span><span class="tag">JUnit</span>
+          <span class="tag">Maven</span><span class="tag">Page Object Model</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon"><i class="fa fa-network-wired"></i></div>
+        <h4>API & Performance</h4>
+        <div class="tag-list">
+          <span class="tag">Postman</span><span class="tag">Apache JMeter 5.x</span>
+          <span class="tag">Assertions</span><span class="tag">Timers</span><span class="tag">Controllers</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon"><i class="fa fa-bug"></i></div>
+        <h4>Bug Tracking & Tools</h4>
+        <div class="tag-list">
+          <span class="tag">JIRA</span><span class="tag">Excel Reporting</span>
+          <span class="tag">Test Documentation</span><span class="tag">GitHub</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon"><i class="fa fa-database"></i></div>
+        <h4>Database</h4>
+        <div class="tag-list">
+          <span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">Data Validation</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon"><i class="fa fa-lightbulb"></i></div>
+        <h4>Soft Skills</h4>
+        <div class="tag-list">
+          <span class="tag">Analytical Thinking</span><span class="tag">Attention to Detail</span>
+          <span class="tag">Problem Solving</span><span class="tag">Team Collaboration</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <p class="section-label">Experience</p>
+    <div class="divider"></div>
+    <h2 class="section-title">Work history</h2>
+    <p class="section-sub">Hands-on testing experience gained through an intensive training program.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="tl-header">
+            <div>
+              <div class="tl-role">Software Testing Trainee</div>
+              <div class="tl-company">Ubicsoft IT Solutions</div>
+            </div>
+            <span class="tl-date">Aug 2025 – Jan 2026</span>
           </div>
-        );
-      };
+          <ul class="tl-bullets">
+            <li>Designed and executed 150+ test cases across functional and regression cycles for web applications, achieving full requirement coverage via RTM</li>
+            <li>Executed end-to-end STLC activities including requirement analysis, test design, execution, and defect tracking using JIRA</li>
+            <li>Automated test scenarios using Selenium WebDriver with Java, TestNG/JUnit, and Maven — reducing manual regression effort</li>
+            <li>Identified and reported defects with clear severity classifications, supporting faster resolution cycles</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      const root = ReactDOM.createRoot(document.getElementById('root'));
-      root.render(<App />);
-    </script>
-  </body>
+<!-- PROJECTS -->
+<section id="projects" style="background: var(--bg2);">
+  <div class="section-inner">
+    <p class="section-label">Projects</p>
+    <div class="divider"></div>
+    <h2 class="section-title">What I've tested</h2>
+    <p class="section-sub">Real-world testing projects covering manual, automation, and end-to-end workflows.</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <p class="project-type">Manual Testing</p>
+        <h3>OrangeHRM</h3>
+        <p>
+          Designed and executed 60+ manual test cases for Login, PIM, and Leave modules. Identified and logged critical defects with detailed bug reports. Maintained a Requirement Traceability Matrix (RTM) for 100% coverage tracking and documented results in Excel and JIRA.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Manual Testing</span>
+          <span class="project-tag">Functional Testing</span>
+          <span class="project-tag">Regression Testing</span>
+          <span class="project-tag">RTM</span>
+          <span class="project-tag">JIRA</span>
+          <span class="project-tag">Excel</span>
+        </div>
+        <div class="project-links">
+          <!-- Replace # with your Google Sheet or test artifact link -->
+          <a class="project-link" href="#" target="_blank"><i class="fa fa-table"></i> Test Cases</a>
+          <a class="project-link" href="#" target="_blank"><i class="fa fa-bug"></i> Bug Report</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <p class="project-type">Automation Testing</p>
+        <h3>ParaBank</h3>
+        <p>
+          Built an end-to-end automation suite for a banking web app using Selenium WebDriver (Java) with Page Object Model (POM) for reusable scripts. Automated 6 critical modules — Registration, Login, Fund Transfer, Bill Pay, Loan Request, and Profile Update — using TestNG with Maven.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Selenium WebDriver</span>
+          <span class="project-tag">Java</span>
+          <span class="project-tag">TestNG</span>
+          <span class="project-tag">Maven</span>
+          <span class="project-tag">Page Object Model</span>
+          <span class="project-tag">JUnit</span>
+        </div>
+        <div class="project-links">
+          <!-- Replace # with your GitHub repo link for this project -->
+          <a class="project-link" href="#" target="_blank"><i class="fab fa-github"></i> View Code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-inner">
+    <p class="section-label">Education</p>
+    <div class="divider"></div>
+    <h2 class="section-title">Academic background</h2>
+    <p class="section-sub">Formal education that built my foundation in computer science and software.</p>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-icon"><i class="fa fa-graduation-cap"></i></div>
+        <div class="edu-body">
+          <div class="edu-degree">Bachelor of Computer Applications (BCA)</div>
+          <div class="edu-school">School of Technology and Applied Sciences, Kottayam</div>
+        </div>
+        <span class="edu-date">2020 – 2023</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" style="background: var(--bg2);">
+  <div class="section-inner">
+    <p class="section-label">Certifications</p>
+    <div class="divider"></div>
+    <h2 class="section-title">Credentials</h2>
+    <p class="section-sub">Industry certifications that validate my testing knowledge and practical skills.</p>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-icon"><i class="fa fa-certificate"></i></div>
+        <div>
+          <div class="cert-name">AI Integrated Full Stack Software Testing</div>
+          <div class="cert-issuer">STC Technologies, Ernakulam · Aug – Dec 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label">Contact</p>
+    <div class="divider"></div>
+    <h2 class="section-title">Get in touch</h2>
+    <p class="section-sub">Open to junior QA Analyst and SDET opportunities. Feel free to reach out!</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa fa-envelope"></i></div>
+          <div><div class="contact-item-label">Email</div><div class="contact-item-value"><a href="mailto:sruthykrishna045@gmail.com">sruthykrishna045@gmail.com</a></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa fa-phone"></i></div>
+          <div><div class="contact-item-label">Phone</div><div class="contact-item-value">+91 8075268398</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fab fa-linkedin"></i></div>
+          <div><div class="contact-item-label">LinkedIn</div><div class="contact-item-value"><a href="https://linkedin.com/in/sruthy-k2003" target="_blank">linkedin.com/in/sruthy-k2003</a></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fab fa-github"></i></div>
+          <div><div class="contact-item-label">GitHub</div><div class="contact-item-value"><a href="https://github.com/sruthykrishna045-dot" target="_blank">github.com/sruthykrishna045-dot</a></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa fa-location-dot"></i></div>
+          <div><div class="contact-item-label">Location</div><div class="contact-item-value">Palakkad, Kerala, India</div></div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="your@email.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="Job opportunity / Collaboration" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Tell me about the role or opportunity..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit"><i class="fa fa-paper-plane"></i> Send Message</button>
+        <p id="form-msg" style="font-size:0.85rem; color: var(--blue); display:none; margin-top:0.5rem;">
+          ✓ Thanks! I'll get back to you shortly.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="https://linkedin.com/in/sruthy-k2003" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="https://github.com/sruthykrishna045-dot" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    <a href="mailto:sruthykrishna045@gmail.com"><i class="fa fa-envelope"></i> Email</a>
+    <a href="https://github.com/sruthykrishna045-dot/portfolio/raw/main/Sruthy_K_SoftwareTester_Resume.pdf" target="_blank"><i class="fa fa-download"></i> Resume</a>
+  </div>
+  <p>© 2026 Sruthy K · Built with HTML, CSS & JavaScript</p>
+</footer>
+
+<!-- SCROLL TO TOP -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <i class="fa fa-arrow-up"></i>
+</button>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('scrollTop');
+    btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('form-msg').style.display = 'block';
+    e.target.reset();
+    setTimeout(() => { document.getElementById('form-msg').style.display = 'none'; }, 4000);
+  }
+
+  // Smooth fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.skill-card, .project-card, .cert-card, .edu-card, .timeline-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
 </html>
