@@ -292,7 +292,7 @@
     <li><a href="#certifications">Certifications</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a class="nav-resume" href="https://github.com/sruthykrishna045-dot/portfolio/raw/main/Sruthy_K_SoftwareTester_Resume.pdf" target="_blank">
+  <a class="nav-resume" href="https://github.com/sruthykrishna045-dot/portfolio/raw/main/Sruthy_K_Software_Testing_Resume.pdf" target="_blank">
     <i class="fa fa-download"></i> Resume
   </a>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -307,7 +307,7 @@
   <a href="#education" onclick="closeMenu()">Education</a>
   <a href="#certifications" onclick="closeMenu()">Certifications</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
-  <a href="https://github.com/sruthykrishna045-dot/portfolio/raw/main/Sruthy_K_SoftwareTester_Resume.pdf" target="_blank">Download Resume</a>
+  <a href="https://github.com/sruthykrishna045-dot/portfolio/raw/main/Sruthy_K_Software_Testing_Resume.pdf" target="_blank">Download Resume</a>
 </div>
 
 <!-- HERO -->
@@ -326,8 +326,8 @@
       </div>
       <div class="hero-stats">
         <div class="stat"><div class="stat-num">150+</div><div class="stat-label">Test Cases</div></div>
-        <div class="stat"><div class="stat-num">2</div><div class="stat-label">Projects</div></div>
-        <div class="stat"><div class="stat-num">6+</div><div class="stat-label">Tools</div></div>
+        <div class="stat"><div class="stat-num">5</div><div class="stat-label">Projects</div></div>
+        <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Tools</div></div>
       </div>
     </div>
     <div class="hero-image">
@@ -469,13 +469,79 @@
     <p class="section-label">Projects</p>
     <div class="divider"></div>
     <h2 class="section-title">What I've tested</h2>
-    <p class="section-sub">Real-world testing projects covering manual, automation, and end-to-end workflows.</p>
+    <p class="section-sub">5 real-world projects spanning manual testing, automation frameworks, data-driven testing, and performance testing.</p>
     <div class="projects-grid">
+
+      <!-- PROJECT 1: BlazeDemo — FEATURED -->
+      <div class="project-card" style="border: 2px solid #1A5FB4; position: relative;">
+        <span style="position:absolute; top:-1px; right:16px; background:#1A5FB4; color:#fff; font-size:0.7rem; font-weight:600; padding:3px 12px; border-radius:0 0 6px 6px; letter-spacing:0.05em;">⭐ FEATURED</span>
+        <p class="project-type">Automation Testing · Data-Driven</p>
+        <h3>BlazeDemo Travel</h3>
+        <p>
+          Automated a full flight booking workflow on BlazeDemo using Selenium WebDriver with data-driven testing via Apache POI. The script intelligently compares all available flight prices and automatically selects the cheapest option ($200.98 from 5 flights) before completing the booking. Integrated Extent Reports for detailed HTML test reporting with step-level logs and booking confirmation capture.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Selenium 4.21</span>
+          <span class="project-tag">Java</span>
+          <span class="project-tag">TestNG 7</span>
+          <span class="project-tag">Apache POI</span>
+          <span class="project-tag">Data-Driven</span>
+          <span class="project-tag">Extent Reports</span>
+          <span class="project-tag">Maven</span>
+        </div>
+        <div class="project-links">
+          <a class="project-link" href="#" target="_blank"><i class="fab fa-github"></i> View Code</a>
+          <a class="project-link" href="#" target="_blank"><i class="fa fa-chart-bar"></i> Test Report</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 2: Myntra -->
+      <div class="project-card">
+        <p class="project-type">Automation Testing · Data-Driven</p>
+        <h3>Myntra</h3>
+        <p>
+          Built a modular automation framework for Myntra's e-commerce platform using Selenium WebDriver with data-driven execution via Apache POI. Automated 8 test cases covering app launch, product search, category navigation, window handling, and Add to Bag — achieving 100% pass rate. Integrated Extent Reports for HTML reporting with step logs and screenshots.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Selenium WebDriver</span>
+          <span class="project-tag">Java</span>
+          <span class="project-tag">TestNG</span>
+          <span class="project-tag">Apache POI</span>
+          <span class="project-tag">Extent Reports</span>
+          <span class="project-tag">Maven</span>
+          <span class="project-tag">Window Handling</span>
+        </div>
+        <div class="project-links">
+          <a class="project-link" href="#" target="_blank"><i class="fab fa-github"></i> View Code</a>
+          <a class="project-link" href="#" target="_blank"><i class="fa fa-chart-bar"></i> Test Report</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 3: ParaBank -->
+      <div class="project-card">
+        <p class="project-type">Automation Testing · POM Framework</p>
+        <h3>ParaBank</h3>
+        <p>
+          Built an end-to-end automation suite for a banking web application using Selenium WebDriver with Page Object Model (POM) for maintainable, reusable scripts. Automated 6 critical modules — Registration, Login, Fund Transfer, Bill Pay, Loan Request, and Profile Update — using TestNG with Maven build integration.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Selenium WebDriver</span>
+          <span class="project-tag">Java</span>
+          <span class="project-tag">TestNG</span>
+          <span class="project-tag">Maven</span>
+          <span class="project-tag">Page Object Model</span>
+        </div>
+        <div class="project-links">
+          <a class="project-link" href="#" target="_blank"><i class="fab fa-github"></i> View Code</a>
+        </div>
+      </div>
+
+      <!-- PROJECT 4: OrangeHRM -->
       <div class="project-card">
         <p class="project-type">Manual Testing</p>
         <h3>OrangeHRM</h3>
         <p>
-          Designed and executed 60+ manual test cases for Login, PIM, and Leave modules. Identified and logged critical defects with detailed bug reports. Maintained a Requirement Traceability Matrix (RTM) for 100% coverage tracking and documented results in Excel and JIRA.
+          Designed and executed 60+ manual test cases for Login, PIM, and Leave modules. Identified and logged critical defects with detailed bug reports in JIRA. Maintained a Requirement Traceability Matrix (RTM) for 100% coverage tracking and documented all results in Excel.
         </p>
         <div class="project-tags">
           <span class="project-tag">Manual Testing</span>
@@ -486,30 +552,31 @@
           <span class="project-tag">Excel</span>
         </div>
         <div class="project-links">
-          <!-- Replace # with your Google Sheet or test artifact link -->
           <a class="project-link" href="#" target="_blank"><i class="fa fa-table"></i> Test Cases</a>
           <a class="project-link" href="#" target="_blank"><i class="fa fa-bug"></i> Bug Report</a>
         </div>
       </div>
+
+      <!-- PROJECT 5: Flipkart -->
       <div class="project-card">
-        <p class="project-type">Automation Testing</p>
-        <h3>ParaBank</h3>
+        <p class="project-type">Performance Testing</p>
+        <h3>Flipkart</h3>
         <p>
-          Built an end-to-end automation suite for a banking web app using Selenium WebDriver (Java) with Page Object Model (POM) for reusable scripts. Automated 6 critical modules — Registration, Login, Fund Transfer, Bill Pay, Loan Request, and Profile Update — using TestNG with Maven.
+          Designed and executed a comprehensive performance test plan for Flipkart's e-commerce platform using Apache JMeter 5.6. Implemented three test strategies — Baseline (1 user), Load (concurrency group), and Stress Test (200 users, 3s ramp-up) — covering Launch, Search, Login, and Add to Cart workflows. Documented bot-protection rate limiting as environment constraints.
         </p>
         <div class="project-tags">
-          <span class="project-tag">Selenium WebDriver</span>
-          <span class="project-tag">Java</span>
-          <span class="project-tag">TestNG</span>
-          <span class="project-tag">Maven</span>
-          <span class="project-tag">Page Object Model</span>
-          <span class="project-tag">JUnit</span>
+          <span class="project-tag">Apache JMeter 5.6</span>
+          <span class="project-tag">Load Testing</span>
+          <span class="project-tag">Stress Testing</span>
+          <span class="project-tag">Baseline Testing</span>
+          <span class="project-tag">Response Assertions</span>
+          <span class="project-tag">Aggregate Report</span>
         </div>
         <div class="project-links">
-          <!-- Replace # with your GitHub repo link for this project -->
-          <a class="project-link" href="#" target="_blank"><i class="fab fa-github"></i> View Code</a>
+          <a class="project-link" href="#" target="_blank"><i class="fab fa-github"></i> View JMX</a>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -617,7 +684,7 @@
     <a href="https://linkedin.com/in/sruthy-k2003" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
     <a href="https://github.com/sruthykrishna045-dot" target="_blank"><i class="fab fa-github"></i> GitHub</a>
     <a href="mailto:sruthykrishna045@gmail.com"><i class="fa fa-envelope"></i> Email</a>
-    <a href="https://github.com/sruthykrishna045-dot/portfolio/raw/main/Sruthy_K_SoftwareTester_Resume.pdf" target="_blank"><i class="fa fa-download"></i> Resume</a>
+    <a href="https://github.com/sruthykrishna045-dot/portfolio/raw/main/Sruthy_K_Software_Testing_Resume.pdf" target="_blank"><i class="fa fa-download"></i> Resume</a>
   </div>
   <p>© 2026 Sruthy K · Built with HTML, CSS & JavaScript</p>
 </footer>
